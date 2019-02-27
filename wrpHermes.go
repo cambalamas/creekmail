@@ -19,7 +19,7 @@ var mainColor string
 func Setup(coName, coWebSite, coLogo string,
 	coFoundationYear uint, color string) {
 
-	mainColor = ValidatedHexColor(color, errColor)
+	mainColor = validatedHexColor(color, errColor)
 
 	copyright := fmt.Sprintf("Copyright © %d %s. All rights reserved.",
 		coFoundationYear, coName)
@@ -38,18 +38,18 @@ func Setup(coName, coWebSite, coLogo string,
 }
 
 // EmailBody is a struct that wrap an email body in all its possible formats
-type emailBody struct {
+type EmailBody struct {
 	TEXT string
 	HTML string
 }
 
 // GenEmailBody returns a EmailBody object with its fields filled
 func GenEmailBody(targetName string, msg, outro []string,
-	buttons ...hermes.Action) emailBody {
+	buttons ...hermes.Action) EmailBody {
 
 	if !mailGeneratorWasUserDefined {
 		log.Fatalln("'GenEmailBody' shouldn't be called without 'Setup' the mail generator")
-		return emailBody{}
+		return EmailBody{}
 	}
 
 	email := hermes.Email{
@@ -71,7 +71,7 @@ func GenEmailBody(targetName string, msg, outro []string,
 		log.Println("Err in HMTL generation, blank is returned")
 	}
 
-	return emailBody{
+	return EmailBody{
 		TEXT: text,
 		HTML: html,
 	}

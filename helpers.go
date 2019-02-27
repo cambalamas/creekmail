@@ -23,3 +23,18 @@ func validatedHexColor(color, onFail string) string {
 
 	return onFail
 }
+
+// validStrSlice returns a empty string slice if the arg slice len is 0 or
+// all its entries are empty
+func validStrSlice(ss []string) []string {
+	empty := 0
+	for _, s := range ss {
+		if s == "" {
+			empty++
+		}
+	}
+	if empty > 0 {
+		return []string{}
+	}
+	return ss
+}
