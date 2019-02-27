@@ -1,6 +1,12 @@
 package creekmail
 
-import "regexp"
+import (
+	"io/ioutil"
+	"log"
+	"regexp"
+
+	yaml "gopkg.in/yaml.v2"
+)
 
 const (
 	errColor = "#FF00FF"
@@ -37,4 +43,15 @@ func validStrSlice(ss []string) []string {
 		return []string{}
 	}
 	return ss
+}
+
+func fillFromYAML(yamlPath string, obj interface{}) {
+	rawYAML, err := ioutil.ReadFile(yamlPath)
+	if err != nil {
+		log.Printf("rawYAML.Get err   #%v ", err)
+	}
+	err = yaml.Unmarshal(rawYAML, &obj)
+	if err != nil {
+		log.Fatalf("Unmarshal: %v", err)
+	}
 }
