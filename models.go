@@ -4,14 +4,14 @@ type ConnData struct {
 	Mail   string
 	AppPwd string
 	Host   string
-	Port   int
+	Port   uint
 }
 
 type CompanyData struct {
 	Name  string
 	Link  string
 	Logo  string
-	Year  int
+	Year  uint
 	Color string
 }
 
@@ -23,6 +23,9 @@ type EmailActionData struct {
 }
 
 type EmailData struct {
+	To       []string
+	Cc       []string
+	Bcc      []string
 	Subject  string
 	Target   string
 	IntroMsg []string
