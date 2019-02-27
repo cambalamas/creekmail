@@ -26,6 +26,6 @@ type EmailData struct {
 	Subject  string
 	Target   string
 	IntroMsg []string
-	Actions  []emailActionData
+	Actions  []EmailActionData
 	OutroMsg []string
 }
