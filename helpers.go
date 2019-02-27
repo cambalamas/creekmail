@@ -45,7 +45,8 @@ func validStrSlice(ss []string) []string {
 	return ss
 }
 
-func fillFromYAML(yamlPath string, obj interface{}) {
+// FillFromYAML gived a yaml path, fills a gived object with its data
+func FillFromYAML(yamlPath string, obj interface{}) {
 	rawYAML, err := ioutil.ReadFile(yamlPath)
 	if err != nil {
 		log.Printf("rawYAML.Get err   #%v ", err)
