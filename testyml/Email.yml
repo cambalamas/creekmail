@@ -1,0 +1,36 @@
+---
+# That yml file represents a mail struct.
+# PS: If 'bcc' field is filled, 'cc' or 'to' should also be filled.
+
+# List all people to whom send the email
+to:
+  - testTo@example.com
+
+# List all people to whom send a copy of the email
+cc:
+  - testCc@example.com
+
+# List all people to send a hidden copy of the email
+bcc:
+  - testBcc@example.com
+
+# Short description of the message
+subject: Hey!
+
+# Person/persons to greet in the mail
+target: Dear users
+
+# Each list elem implies line jump when its rendered
+introMsg:
+  - Test mail from our team
+
+# Each list elem is a new butto with prev messagge
+actions:
+  - Text: "Visit our webpage:"
+    ButtonText: Ok, let me see
+    ButtonLink: http://cambalamas.com
+    ButtonColor: "#FF0033"
+
+# Each list elem implies line jump when its rendered
+outroMsg:
+  - Enjoy our app!

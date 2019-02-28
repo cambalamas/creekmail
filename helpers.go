@@ -1,6 +1,7 @@
 package creekmail
 
 import (
+	"fmt"
 	"io/ioutil"
 	"log"
 	"regexp"
@@ -51,8 +52,28 @@ func FillFromYAML(yamlPath string, obj interface{}) {
 	if err != nil {
 		log.Printf("rawYAML.Get err   #%v ", err)
 	}
+	fmt.Println(string(rawYAML))
 	err = yaml.Unmarshal(rawYAML, &obj)
 	if err != nil {
 		log.Fatalf("Unmarshal: %v", err)
+	}
+}
+
+// --- YML Helpers ---
+
+func ymlLoad(ymlPath string) []byte {
+	yml, err := ioutil.ReadFile(ymlPath)
+	if err != nil {
+		log.Printf("yml.Get err   #%v ", err)
+	}
+	return yml
+}
+
+func ymlErr(err error, callback ...func()) {
+	if err != nil {
+		log.Fatalf("Unmarshal: %v", err)
+	}
+	if len(callback) > 0 {
+		callback[0]()
 	}
 }

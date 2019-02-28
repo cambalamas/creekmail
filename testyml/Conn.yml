@@ -1,0 +1,16 @@
+---
+# That yml file represents the data needed for realize a connection
+# over smtp protocol.
+
+# From mail field / Who send the messagge
+mail: test@example.com
+
+# App password its recommend but it should work with your common password
+appPwd: testexample
+
+# Mail provider host
+host: smtp.gmail.com
+
+# Use 465 for smtps or better, 587 for msa
+# http://wiki.linuxquestions.org/wiki/Mail_submission_agent
+port: 587

@@ -1,0 +1,18 @@
+---
+# That yml file represents the data needed for compose the layout
+# of a profesional mail that reflect your brand.
+
+# Brand's name
+name: NinthCreek
+
+# Brand's web site
+link: http://cambalamas.com
+
+# Brand's logo/icon (Currently only supports url, not local files)
+logo: https://img00.deviantart.net/313a/i/2008/070/7/8/mudokon_face__ill_by_comrade_max.png
+
+# Brand's foundation year (Used for auto setup copyright messagge)
+year: 1993
+
+# Brand's main/default color
+color: "#FF0033"
