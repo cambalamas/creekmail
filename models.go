@@ -57,10 +57,10 @@ type EmailData struct {
 	Target   string   `yaml:"target"`
 	IntroMsg []string `yaml:"introMsg"`
 	Actions  []struct {
-		Text        string `yaml:"Text"`
-		ButtonText  string `yaml:"ButtonText"`
-		ButtonLink  string `yaml:"ButtonLink"`
-		ButtonColor string `yaml:"ButtonColor"`
+		Msg   string `yaml:"Text"`
+		Text  string `yaml:"ButtonText"`
+		Link  string `yaml:"ButtonLink"`
+		Color string `yaml:"ButtonColor"`
 	} `yaml:"actions"`
 	OutroMsg []string `yaml:"outroMsg"`
 }
