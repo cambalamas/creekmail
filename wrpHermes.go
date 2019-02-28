@@ -7,6 +7,9 @@ import (
 	"github.com/matcornic/hermes/v2"
 )
 
+// Action wraps hermes action to do not need import hermes
+type Action = hermes.Action
+
 // mailGenerator is a exposed hermes object for transparent interaction with
 // body generator function(s)
 var mailGenerator hermes.Hermes
@@ -45,7 +48,7 @@ type EmailBody struct {
 
 // GenEmailBody returns a EmailBody object with its fields filled
 func GenEmailBody(targetName string, msg, outro []string,
-	buttons ...hermes.Action) EmailBody {
+	buttons ...Action) EmailBody {
 
 	if !mailGeneratorWasUserDefined {
 		log.Fatalln("'GenEmailBody' shouldn't be called without 'Setup' the mail generator")
