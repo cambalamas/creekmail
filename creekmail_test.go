@@ -20,7 +20,7 @@ func TestParseYAML(t *testing.T) {
 	{
 		yml := "testyml/Brand.yml"
 		data := BrandDataFromYAML(yml)
-		if spew.Sdump(data) != spew.Sdump(BrandData{}) {
+		if spew.Sdump(data) == spew.Sdump(BrandData{}) {
 			t.Errorf("Fail loading %s, struct is empty after load.", yml)
 		}
 	}

@@ -26,10 +26,10 @@ introMsg:
 
 # Each list elem is a new butto with prev messagge
 actions:
-  - Text: "Visit our webpage:"
-    ButtonText: Ok, let me see
-    ButtonLink: http://cambalamas.com
-    ButtonColor: "#FF0033"
+  - msg: "Visit our webpage:"
+    text: Ok, let me see
+    link: http://cambalamas.com
+    color: "#FF0033"
 
 # Each list elem implies line jump when its rendered
 outroMsg:
